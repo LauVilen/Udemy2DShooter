@@ -22,6 +22,7 @@ public class UIHealth : MonoBehaviour
         for (int i = 0; i < livesCount; i++)
         {
             hearts.Add(Instantiate(heartPrefab, healthPanel.transform).GetComponent<Image>());
+            hearts[i].enabled = true;
         }
     }
 
