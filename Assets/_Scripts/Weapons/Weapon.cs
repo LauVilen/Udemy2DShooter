@@ -25,7 +25,11 @@ public class Weapon : MonoBehaviour
     {
         get { return ammo; }
         //set method makes sure ammo is never below 0 and cannot exeed the ammocapacity (ammo capacity set in WeaponDataSO)
-        set { ammo = Mathf.Clamp(value, 0, weaponData.AmmoCapacity); }
+        set
+        {
+            ammo = Mathf.Clamp(value, 0, weaponData.AmmoCapacity);
+            OnAmmoChange?.Invoke(ammo);
+        }
     }
 
     public bool AmmoFull { get => Ammo >=weaponData.AmmoCapacity; }
@@ -38,6 +42,8 @@ public class Weapon : MonoBehaviour
 
     //Event used to play shot audio, when out of bullets
     [field: SerializeField] public UnityEvent OnShootNoAmmo { get; set; }
+
+    [field: SerializeField] public UnityEvent<int> OnAmmoChange { get; set; }
 
     #endregion
 
