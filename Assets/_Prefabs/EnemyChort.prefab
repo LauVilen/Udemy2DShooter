@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 6632391185160261724}
   - component: {fileID: 6632391185160261727}
   - component: {fileID: 6632391185160261725}
+  - component: {fileID: 1949097586}
   m_Layer: 8
   m_Name: TransitionChase
   m_TagString: Untagged
@@ -172,6 +173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Decisions>k__BackingField:
   - {fileID: 6632391185160261725}
+  - {fileID: 1949097586}
   <PositiveResult>k__BackingField: {fileID: 6632391185081613174}
   <NegativeResult>k__BackingField: {fileID: 0}
 --- !u!114 &6632391185160261725
@@ -187,6 +189,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Distance>k__BackingField: 12
+--- !u!114 &1949097586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6632391185160261726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaa8023b5724bac40a092a83cf2056c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 12
+  rayCastMask:
+    serializedVersion: 2
+    m_Bits: 640
+  <OnPlayerSpotted>k__BackingField:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6632391186469003794}
+        m_TargetAssemblyTypeName: AgentSounds, Assembly-CSharp
+        m_MethodName: PlayVoiceLine
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6632391185550341167
 GameObject:
   m_ObjectHideFlags: 0
@@ -459,7 +492,7 @@ MonoBehaviour:
   - {x: 0.2947638, y: -0.49309492, z: 0}
   m_ShapePathHash: 1571432953
   m_Mesh: {fileID: 0}
-  m_InstanceId: 69760
+  m_InstanceId: -4538
 --- !u!1 &6632391185732574728
 GameObject:
   m_ObjectHideFlags: 0
@@ -743,7 +776,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 0.4
-  m_Pitch: 1
+  m_Pitch: 0.5
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -841,7 +874,7 @@ MonoBehaviour:
   pitchRandomness: 0.1
   hitClip: {fileID: 8300000, guid: 739174ccbca42d34c88579866c1e36aa, type: 3}
   deathClip: {fileID: 8300000, guid: 918d5cae1ca984a47abfda660d6ef771, type: 3}
-  voiceLineClip: {fileID: 8300000, guid: 7e425c8c1ba7f3a49afb051e87677bf3, type: 3}
+  voiceLineClip: {fileID: 8300000, guid: 0fec2a9f2b344184bb9c1de83590a287, type: 3}
 --- !u!1 &6632391186541777015
 GameObject:
   m_ObjectHideFlags: 0
