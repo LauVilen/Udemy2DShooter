@@ -7,6 +7,7 @@ using UnityEngine.Events;
 public class Player : MonoBehaviour, IAgent, IHittable
 {
     private bool dead = false;
+    private PlayerWeapon playerWeapon = null;
     [field: SerializeField] private int maxHealth;
     private int health;
     public int Health {
@@ -26,6 +27,11 @@ public class Player : MonoBehaviour, IAgent, IHittable
     {
         Health = maxHealth;
         UiHealth.Initialize(Health);
+    }
+
+    private void Awake()
+    {
+        playerWeapon = GetComponentInChildren<PlayerWeapon>();
     }
 
     public void GetHit(int dmg, GameObject dmgDealer)
@@ -49,5 +55,44 @@ public class Player : MonoBehaviour, IAgent, IHittable
         //pauses the "thread" before carrying out any further logic
         yield return new WaitForSeconds(.3f);
         Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Resource"))
+        {
+            var resource = collision.gameObject.GetComponent<Resource>();
+            if (resource!=null)
+            {
+                switch (resource.ResourceData.ResourceType)
+                {
+                    case ResourceEnum.Health:
+                        if (Health>=maxHealth)
+                        {
+                            return;
+                        }
+                        else
+                        {
+                            Health += resource.ResourceData.GetAmount();
+                            resource.PickUpResource();
+                            Debug.Log(Health);
+                        }
+                        break;
+                    case ResourceEnum.Ammo:
+                        if (playerWeapon.AmmoFull)
+                        {
+                            return;
+                        }
+                        else
+                        {
+                            playerWeapon.AddAmmo(resource.ResourceData.GetAmount());
+                            resource.PickUpResource();
+                        }
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
     }
 }

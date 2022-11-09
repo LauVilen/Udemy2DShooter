@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b30f45c9b809ac14785f3feafdd5e0d1, type: 3}
   m_Name: HealthResourceData
   m_EditorClassIdentifier: 
-  <ResourceType>k__BackingField: 2
+  <ResourceType>k__BackingField: 1
   minAmount: 1
   maxAmount: 3
