@@ -75,7 +75,6 @@ public class Player : MonoBehaviour, IAgent, IHittable
                         {
                             Health += resource.ResourceData.GetAmount();
                             resource.PickUpResource();
-                            Debug.Log(Health);
                         }
                         break;
                     case ResourceEnum.Ammo:
