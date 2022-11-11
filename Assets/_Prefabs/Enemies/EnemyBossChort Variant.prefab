@@ -25,7 +25,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6632391185550341165, guid: 7de2f49b7d9a629498a6179249c9c9be, type: 3}
       propertyPath: m_InstanceId
-      value: -35528
+      value: -1364
       objectReference: {fileID: 0}
     - target: {fileID: 6632391185550341165, guid: 7de2f49b7d9a629498a6179249c9c9be, type: 3}
       propertyPath: m_ShapePathHash
@@ -235,6 +235,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6632391186770711284, guid: 7de2f49b7d9a629498a6179249c9c9be, type: 3}
+      propertyPath: <MovementData>k__BackingField
+      value: 
+      objectReference: {fileID: 11400000, guid: bf18803eeb36b42479a5addc205522c9, type: 2}
     - target: {fileID: 6632391186770711287, guid: 7de2f49b7d9a629498a6179249c9c9be, type: 3}
       propertyPath: m_Name
       value: EnemyBossChort
