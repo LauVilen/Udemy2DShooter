@@ -50,6 +50,9 @@ TagManager:
   - name: Agents
     uniqueID: 3422356169
     locked: 0
+  - name: Muzzle
+    uniqueID: 2562841213
+    locked: 0
   - name: Foreground
     uniqueID: 237952335
     locked: 0
