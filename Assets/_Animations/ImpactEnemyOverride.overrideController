@@ -1,0 +1,13 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ImpactEnemyOverride
+  m_Controller: {fileID: 9100000, guid: 54022056b3e334149b2cdc5fd031f15e, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: d2b6d89d78245ad41a3bc3bfe9b6a002, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 49e867e8cb969b745aeca1135b120fd7, type: 2}

@@ -35,24 +35,29 @@ public class RegularBullet : Bullet
         //checks if the bullet hits the wall or other obstacles and calls the appropriate function
         if (collision.gameObject.layer == LayerMask.NameToLayer("Obstacles"))
         {
-            HitObstacle();
+            HitObstacle(collision);
         }
         //checks if the bullet hits an enemy and calls the appropriate function
         else if (collision.gameObject.layer == LayerMask.NameToLayer("Enemies"))
         {
-            HitEnemy();
+            HitEnemy(collision);
         }
         //lastly the game object (bullet) is destroyed, so it does not exist eternally in the hierarchy and slows the program down
         Destroy(gameObject);
     }
 
-    private void HitObstacle()
+    private void HitObstacle(Collider2D collision)
     {
-        Debug.Log("Hitting Obstacle");
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right);
+        if (hit.collider != null)
+        {
+            Instantiate(bulletData.ImpactObstaclePrefab, hit.point, Quaternion.identity);
+        }
     }
 
-    private void HitEnemy()
+    private void HitEnemy(Collider2D collision)
     {
-        Debug.Log("Hitting Enemy");
+        Vector2 randomOffSet = Random.insideUnitCircle * 0.5f; //Multiplier should fit sprite size, get value through collision.???
+        Instantiate(BulletData.ImpactEnemyPrefab, collision.transform.position + (Vector3)randomOffSet, Quaternion.identity);
     }
 }

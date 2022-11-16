@@ -7,7 +7,7 @@ using Random = UnityEngine.Random;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject enemyPrefab = null;
+    // [SerializeField] private GameObject enemyPrefab = null;
     [SerializeField] private List<GameObject> spawnPoints = null;
     [SerializeField] private int count = 20;
     [SerializeField] private float minDelay = 0.8f, maxDelay = 1.5f;
