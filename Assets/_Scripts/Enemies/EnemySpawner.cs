@@ -11,6 +11,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private List<GameObject> spawnPoints = null;
     [SerializeField] private int count = 20;
     [SerializeField] private float minDelay = 0.8f, maxDelay = 1.5f;
+    private bool playerIsDead = false;
 
     [SerializeField] private List<EnemySpawnData> enemiesToSpawn = new List<EnemySpawnData>();
     private float[] enemyWeights;
@@ -28,6 +29,10 @@ public class EnemySpawner : MonoBehaviour
 
             var randomTime = Random.Range(minDelay, maxDelay);
             yield return new WaitForSeconds(randomTime);
+            if (playerIsDead)
+            {
+                break;
+            }
         }
     }
 
@@ -70,6 +75,11 @@ public class EnemySpawner : MonoBehaviour
             tempSum += enemyWeights[i];
         }
         return 0;
+    }
+
+    public void StopSpawning()
+    {
+        playerIsDead = true;
     }
 }
 
