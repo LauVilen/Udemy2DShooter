@@ -27,13 +27,13 @@ public class LookDecision : AIDecision
         return false;
     }
 
-    private void OnDrawGizmos()
-    {
-        if (UnityEditor.Selection.activeObject == gameObject && enemyBrain != null && enemyBrain.Target != null)
-        {
-            Gizmos.color = Color.red;
-            direction = enemyBrain.Target.transform.position - transform.position;
-            Gizmos.DrawRay(transform.position,direction.normalized*distance);
-        }
-    }
+    // private void OnDrawGizmos()
+    // {
+    //     if (UnityEditor.Selection.activeObject == gameObject && enemyBrain != null && enemyBrain.Target != null)
+    //     {
+    //         Gizmos.color = Color.red;
+    //         direction = enemyBrain.Target.transform.position - transform.position;
+    //         Gizmos.DrawRay(transform.position,direction.normalized*distance);
+    //     }
+    // }
 }

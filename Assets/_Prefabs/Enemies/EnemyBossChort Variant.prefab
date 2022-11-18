@@ -25,7 +25,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6632391185550341165, guid: 7de2f49b7d9a629498a6179249c9c9be, type: 3}
       propertyPath: m_InstanceId
-      value: -1364
+      value: -136856
       objectReference: {fileID: 0}
     - target: {fileID: 6632391185550341165, guid: 7de2f49b7d9a629498a6179249c9c9be, type: 3}
       propertyPath: m_ShapePathHash
@@ -191,17 +191,41 @@ PrefabInstance:
       propertyPath: <EnemyData>k__BackingField
       value: 
       objectReference: {fileID: 11400000, guid: 51e5373c36c33c74098f658814b70dde, type: 2}
+    - target: {fileID: 6632391186770711281, guid: 7de2f49b7d9a629498a6179249c9c9be, type: 3}
+      propertyPath: <OnDie>k__BackingField.m_PersistentCalls.m_Calls.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6632391186770711281, guid: 7de2f49b7d9a629498a6179249c9c9be, type: 3}
+      propertyPath: <OnDie>k__BackingField.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 3610417472039224692}
+    - target: {fileID: 6632391186770711281, guid: 7de2f49b7d9a629498a6179249c9c9be, type: 3}
+      propertyPath: <OnDie>k__BackingField.m_PersistentCalls.m_Calls.Array.data[4].m_Target
+      value: 
+      objectReference: {fileID: 11500000, guid: 308b83d4b429c4e498df9f273eca5caa, type: 3}
+    - target: {fileID: 6632391186770711281, guid: 7de2f49b7d9a629498a6179249c9c9be, type: 3}
+      propertyPath: <OnDie>k__BackingField.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: DropItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 6632391186770711281, guid: 7de2f49b7d9a629498a6179249c9c9be, type: 3}
+      propertyPath: <OnDie>k__BackingField.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6632391186770711281, guid: 7de2f49b7d9a629498a6179249c9c9be, type: 3}
+      propertyPath: <OnDie>k__BackingField.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: ItemDropper, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 6632391186770711283, guid: 7de2f49b7d9a629498a6179249c9c9be, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6632391186770711283, guid: 7de2f49b7d9a629498a6179249c9c9be, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.58
+      value: 6.4962587
       objectReference: {fileID: 0}
     - target: {fileID: 6632391186770711283, guid: 7de2f49b7d9a629498a6179249c9c9be, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.67
+      value: -1.9831175
       objectReference: {fileID: 0}
     - target: {fileID: 6632391186770711283, guid: 7de2f49b7d9a629498a6179249c9c9be, type: 3}
       propertyPath: m_LocalPosition.z
@@ -241,7 +265,18 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: bf18803eeb36b42479a5addc205522c9, type: 2}
     - target: {fileID: 6632391186770711287, guid: 7de2f49b7d9a629498a6179249c9c9be, type: 3}
       propertyPath: m_Name
-      value: EnemyBossChort
+      value: EnemyBossChort Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7de2f49b7d9a629498a6179249c9c9be, type: 3}
+--- !u!114 &3610417472039224692 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114235808, guid: 7de2f49b7d9a629498a6179249c9c9be, type: 3}
+  m_PrefabInstance: {fileID: 3610417471926574292}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8921999df1aecdf4cb97ea9fd08d377c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

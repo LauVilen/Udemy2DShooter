@@ -7,14 +7,27 @@ using Random = UnityEngine.Random;
 
 public class EnemySpawner : MonoBehaviour
 {
-    // [SerializeField] private GameObject enemyPrefab = null;
-    [SerializeField] private List<GameObject> spawnPoints = null;
-    [SerializeField] private int count = 20;
-    [SerializeField] private float minDelay = 0.8f, maxDelay = 1.5f;
-    private bool playerIsDead = false;
-
+    [field: SerializeField] public EnemySpawnDataSO spawnDataSO { get; set; }
     [SerializeField] private List<EnemySpawnData> enemiesToSpawn = new List<EnemySpawnData>();
+    [SerializeField] private List<GameObject> spawnPoints = null;
+    private bool playerIsDead = false;
+    private int count = 0;
     private float[] enemyWeights;
+
+    private void Start()
+    {
+        count = spawnDataSO.amountToSpawn;
+        enemyWeights = enemiesToSpawn.Select(enemy => enemy.rate).ToArray();
+        if (spawnPoints.Count > 0)
+        {
+            foreach (var spawnPoint in spawnPoints)
+            {
+                SpawnEnemy(spawnPoint.transform.position);
+            }
+        }
+
+        StartCoroutine(SpawnCoroutine());
+    }
 
     IEnumerator SpawnCoroutine()
     {
@@ -27,7 +40,7 @@ public class EnemySpawner : MonoBehaviour
 
             SpawnEnemy(spawnPoint);
 
-            var randomTime = Random.Range(minDelay, maxDelay);
+            var randomTime = Random.Range(spawnDataSO.minDelay, spawnDataSO.maxDelay);
             yield return new WaitForSeconds(randomTime);
             if (playerIsDead)
             {
@@ -40,20 +53,6 @@ public class EnemySpawner : MonoBehaviour
     {
         int index = GetRandomWeightedIndex(enemyWeights);
         Instantiate(enemiesToSpawn[index].enemyPrefab, spawnPoint, Quaternion.identity);
-    }
-
-    private void Start()
-    {
-        enemyWeights = enemiesToSpawn.Select(enemy => enemy.rate).ToArray();
-        if (spawnPoints.Count>0)
-        {
-            foreach (var spawnPoint in spawnPoints)
-            {
-                SpawnEnemy(spawnPoint.transform.position);
-            }
-        }
-
-        StartCoroutine(SpawnCoroutine());
     }
 
     private int GetRandomWeightedIndex(float[] enemyWeights)

@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
     {
         DOTween.KillAll();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        Debug.Log("Restart clicked");
+        Time.timeScale = 1;
     }
     public void PauseGame()
     {
